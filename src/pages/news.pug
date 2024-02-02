@@ -1,0 +1,6 @@
+extends ../pug/_layout
+
+block body
+  .content
+    +head('Новости', 'Здесь вы можете ознакомиться с новостями компании', true)
+    include ../modules/newsList/newsList

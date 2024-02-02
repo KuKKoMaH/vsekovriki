@@ -1,0 +1,66 @@
+.brandsList {
+  $this: &;
+
+  &__list {
+    columns: 5;
+    @include mobile() {
+      columns: 2;
+    }
+
+    ul {
+      page-break-inside: avoid;
+    }
+
+    ul, li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    ul {
+      padding-left: 45px;
+      margin-bottom: 35px;
+      @include mobile() {
+        padding-left: 30px;
+      }
+    }
+
+    li {
+      margin-bottom: 7px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      font-size: 19px;
+      text-decoration: none;
+      @include anim();
+      @include mobile() {
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__letter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    color: $gray4;
+    @include mobile() {
+      font-size: 22px;
+    }
+  }
+}

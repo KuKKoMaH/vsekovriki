@@ -1,0 +1,32 @@
+.form {
+  $this: &;
+
+  &__title {
+    font-size: 36px;
+    line-height: (38/36);
+    @include ls-m();
+    font-weight: bold;
+    margin-bottom: 28px;
+    //color: $green-dark;
+    @include mobile() {
+      font-size: 24px;
+      line-height: (28/24);
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    line-height: (26/18);
+    @include ls();
+    margin-bottom: 28px;
+    @include mobile() {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    & > * {
+      margin-bottom: 20px;
+    }
+  }
+}

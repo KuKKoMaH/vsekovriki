@@ -1,0 +1,7 @@
+extends ../pug/_layout
+
+block body
+  .content
+    +head('Контактная информация', 'Свяжитесь с нами удобным для Вас способом, будем рады сотрудничеству', true)
+    include ../modules/contacts/contacts
+    include ../modules/question/question

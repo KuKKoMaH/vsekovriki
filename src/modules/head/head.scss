@@ -1,0 +1,32 @@
+.head {
+  $this: &;
+
+  & + * {
+    margin-top: 0;
+  }
+
+  &--underline {
+    padding-bottom: 24px;
+    border-bottom: 1px solid $gray4;
+    margin-bottom: 24px;
+    @include mobile() {
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    margin-top: 16px;
+    font-size: 19px;
+    color: $gray3;
+    max-width: 500px;
+    @include mobile() {
+      font-size: 16px;
+    }
+  }
+}

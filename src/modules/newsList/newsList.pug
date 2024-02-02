@@ -1,0 +1,10 @@
+.newsList
+  .newsList__items
+    each i in [1,2,3,4,5]
+      .newsList__item
+        a.newsList__card(href='#')
+          span.newsList__img: img(src=require('src/modules/newsList/img/img.jpg'))
+          span.newsList__title Что такое ЭВА?
+          span.newsList__date 24.09.23
+          span.newsList__text В этой статье мы расскажем что такое материал ЭВА. Чем он лучше других...
+          span.btn Подробнее

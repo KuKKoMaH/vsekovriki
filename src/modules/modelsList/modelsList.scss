@@ -1,0 +1,79 @@
+.modelsList {
+  $this: &;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -102px -12px;
+    @include mobile() {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    width: 33.3333%;
+    flex-shrink: 0;
+    padding: 102px 12px;
+    @include mobile() {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 69px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    text-decoration: none;
+    padding: 24px;
+
+    @include mobile() {
+      box-shadow: 0px 0.779px 2.337px 0px rgba(168, 168, 168, 0.10), 0px 4.674px 4.674px 0px rgba(168, 168, 168, 0.09), 0px 10.127px 6.232px 0px rgba(168, 168, 168, 0.05), 0px 17.137px 7.011px 0px rgba(168, 168, 168, 0.01), 0px 27.264px 7.79px 0px rgba(168, 168, 168, 0.00);
+    }
+  }
+
+  &__head {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  &__image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__title {
+    color: $gray3;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  &__price {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  &__oldPrice {
+    font-size: 20px;
+    color: $gray;
+    margin-left: 32px;
+    text-decoration: line-through;
+  }
+}

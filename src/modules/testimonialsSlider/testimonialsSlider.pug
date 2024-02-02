@@ -1,0 +1,13 @@
+.testimonialsSlider.fullWidth
+  .c
+    .testimonialsSlider__title Отзывы наших #[br]клиентов
+    .testimonialsSlider__container
+      .testimonialsSlider__slider
+        .testimonialsSlider__slides
+          each i in [1,2,3,4,5,6,7]
+            .testimonialsSlider__slide
+              a.testimonialsSlider__item(href='#')
+                img(src=require('src/modules/testimonialsSlider/img/testimonialSlider.jpg'))
+                +the_svg('youtube')
+      button.testimonialsSlider__nav.testimonialsSlider__nav--prev: +the_svg('triangle-arrow')
+      button.testimonialsSlider__nav.testimonialsSlider__nav--next: +the_svg('triangle-arrow')

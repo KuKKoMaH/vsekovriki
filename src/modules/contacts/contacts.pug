@@ -1,0 +1,22 @@
+.contacts.block
+  .contacts__content
+    .contacts__contacts
+      .contacts__contact
+        +the_svg('phone')
+        .contacts__label Звонить по номеру
+        .contacts__value.contacts__value--phone: a(href='#') 8 800 100-29-02
+      .contacts__contact
+        +the_svg('geo')
+        .contacts__label Мы находимся по адрессу
+        .contacts__value Санкт-Петербург, Старо Паново, Пролетарская 19
+      .contacts__contact
+        +the_svg('mail')
+        .contacts__label Электронная почта
+        .contacts__value: a(href='#') avito.kovriki@gmail.com
+
+      .contacts__socialsTitle Мы в соц сетях:
+      .contacts__socials
+        a.contacts__socials(href='#'): img(src=require('src/modules/contacts/img/whatsapp.svg'))
+        a.contacts__socials(href='#'): img(src=require('src/modules/contacts/img/telegram.svg'))
+
+    .contacts__map

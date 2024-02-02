@@ -1,0 +1,86 @@
+.orderMarquee {
+  $this: &;
+
+  &__container {
+    white-space: nowrap;
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba($gray3, .5);
+    border-left: 0;
+    border-right: 0;
+    padding: 34px 0;
+    @include mobile() {
+      padding: 18px;
+    }
+  }
+
+  &__text {
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    @include mobile() {
+      font-size: 36px;
+    }
+
+    > * {
+      display: flex;
+      align-items: center;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: $red;
+        margin: 0 32px;
+        @include mobile() {
+          width: 14px;
+          height: 14px;
+          margin: 0 16px;
+        }
+      }
+    }
+  }
+
+  &__filled {
+    color: $red;
+  }
+
+  &__outline {
+    color: transparent;
+    -webkit-text-stroke: 2px $red;
+    @include mobile() {
+      -webkit-text-stroke: 1px $red;
+    }
+  }
+
+  &--enable {
+    #{$this} {
+      &__text {
+        animation: marquee 32s linear infinite;
+      }
+    }
+  }
+
+  &:hover {
+    #{$this} {
+      &__text {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100%));
+  }
+}

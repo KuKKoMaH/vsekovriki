@@ -1,0 +1,56 @@
+.footerMenu {
+  $this: &;
+  border-top: 2px solid $blue;
+
+  margin-top: 80px;
+  @include mobile() {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .c {
+    @include mobile() {
+      max-width: 100%;
+      padding: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -4px;
+    @include mobile() {
+      margin: 0 ;
+    }
+  }
+
+  li {
+    flex-shrink: 0;
+    margin: 0 12px;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 18px 0;
+    @include anim();
+    @include mobile() {
+      padding: 12px 0;
+    }
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

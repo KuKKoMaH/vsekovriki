@@ -1,0 +1,11 @@
+.alphabetCatalog.block
+  .alphabetCatalog__content
+    .alphabetCatalog__title Наша продукция
+    .alphabetCatalog__text Автомобильные коврики Eva – это продукция нашего собственного производства, которая отличается высоким качеством и функциональностью. Мы уверены, что наши коврики Eva будут отличным приобретением для Вашего автомобиля. Они обеспечат надежную защиту, комфорт и стильный внешний вид
+  .alphabetCatalog__alphabet
+    each i in ["A","B","C","D","E","F","G","H","I",'J',"K","L","M","N", "O", "P", "R", "S", 'T', "V", "W", "Y", "Z"]
+      a(href='#')=i
+  .alphabetCatalog__label Воспользуйтесь поиском по марке автомобиля
+  .alphabetCatalog__action
+    a.btn.btn--outline(href='#') смотреть все марки
+  img.alphabetCatalog__car(src=require('src/modules/alphabetCatalog/img/whiteCar.png'))

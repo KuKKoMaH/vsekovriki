@@ -1,0 +1,9 @@
+extends ../pug/_layout
+
+block body
+  .content
+    +head('Каталог ковриков из ЭВА (EVA) для автомобилей')
+    include ../modules/brandsGrid/brandsGridSm
+    include ../modules/brandsList/brandsList
+    include ../modules/seoText/seoText
+    include ../modules/question/question

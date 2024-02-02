@@ -1,0 +1,46 @@
+.news {
+  $this: &;
+
+  &__image {
+    float: right;
+    margin-left: 72px;
+    margin-bottom: 72px;
+    position: relative;
+    @include mobile() {
+      float: none;
+      width: 100%;
+      margin: 0 0 32px;
+    }
+
+
+    img {
+      display: block;
+      max-width: 700px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      @include mobile() {
+        border-radius: 5px;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 32px;
+      right: -12px;
+      top: -12px;
+      bottom: 12px;
+      background: $red;
+      border-radius: 10px;
+      z-index: -1;
+      @include mobile() {
+        left: 16px;
+        right: -6px;
+        top: -6px;
+        bottom: 6px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

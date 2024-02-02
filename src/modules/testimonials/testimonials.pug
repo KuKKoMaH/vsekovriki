@@ -1,0 +1,8 @@
+.testimonials
+  .testimonials__items
+    each i in [1,2,3,4,5]
+      .testimonials__item
+        a.testimonials__card(href='#')
+          img(src=require('src/modules/testimonialsSlider/img/testimonialSlider.jpg'))
+          +the_svg('youtube')
+

@@ -1,0 +1,138 @@
+.testimonialsSlider {
+  $this: &;
+
+  background: rgba($gray3, .2);
+  padding: 92px 0;
+  @include mobile() {
+    padding: 32px 0;
+  }
+
+  &__title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    padding: 0 42px;
+    @include mobile() {
+      font-size: 22px;
+      padding: 0;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    @include mobile() {
+      width: calc(100vw - var(--scrollbar-width, 0px));
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    border: 1px solid $gray3;
+    border-radius: 8px;
+    margin: 0 42px;
+    @include mobile() {
+      margin: 0;
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  &__slides {
+    display: flex;
+    align-items: center;
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    width: 355px + 18px;
+    padding: 8px 0;
+    @include mobile() {
+      width: 240px + 28px;
+    }
+  }
+
+  &__item {
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 355px;
+    height: 200px;
+    margin: 0 auto;
+    @include mobile() {
+      width: 240px;
+      height: 135px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 32px;
+      height: 32px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      svg {
+        color: $gray;
+      }
+    }
+
+    &:active {
+      svg {
+        color: $gray3;
+      }
+    }
+
+    svg {
+      color: $gray3;
+      width: 24px;
+      height: 24px;
+      @include anim();
+    }
+
+    &--prev {
+      left: 0;
+      @include mobile() {
+        left: 50%;
+        margin-left: -156px;
+      }
+    }
+
+    &--next {
+      right: 0;
+      @include mobile() {
+        right: 50%;
+        margin-right: -156px;
+      }
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

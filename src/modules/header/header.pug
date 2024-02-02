@@ -1,0 +1,44 @@
+header.header
+  .header__top
+    .c
+      button.header__city
+        span.header__cityIcon: +the_svg('geo')
+        span.header__cityName Санкт-Петербург
+      .header__topAside
+        a(href='#' target="_blank").header__topContact: +the_svg('whatsapp')
+        a(href='#' target="_blank").header__topContact: +the_svg('telegram')
+        a(href='#' target="_blank").header__topPhone
+          +the_svg('phone')
+          | 8 800 100-29-02
+  .header__main
+    .c
+      .header__logo
+        img.header__logoImage(src=require('src/img/logo.png'))
+        .header__logoText Коврики для вашего #[br]автомобиля
+      .header__content
+        .header__menu
+          button.header__menuClose: +the_svg('close')
+          ul
+            li: a(href='#') Каталог
+            li: a(href='#') О продукции
+            li: a(href='#') Акции
+            li: a(href='#') Оплата и доставка
+            li: a(href='#') Гарантия
+            li: a(href='#') Возврат
+            li: a(href='#') Отзывы
+            li: a(href='#') Контакты
+        .header__info
+          .header__constructor
+            a.btn(href='#') Онлайн-конструктор
+          form.header__search
+            input.header__searchInput(placeholder="Поиск по авто")
+            button.header__searchIcon: +the_svg('search')
+
+          a.header__searchButton
+            +the_svg('search')
+
+          a.header__cartButton
+            +the_svg('cart')
+            span.header__cartButtonCount 0
+
+          button.header__menuButton: +the_svg('menu')

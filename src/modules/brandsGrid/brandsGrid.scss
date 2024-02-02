@@ -1,0 +1,132 @@
+$total-brands: 14;
+$desktop-columns: 7;
+$mobile-columns: 2;
+$mobile-sm-columns: 3;
+
+.brandsGrid {
+  $this: &;
+
+  &__container {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    @include mobile() {
+      max-width: 280px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    color: $blue;
+    margin-bottom: 32px;
+    @include mobile() {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__items {
+    //display: flex;
+    //flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat($desktop-columns, 1fr);
+    //grid-gap: 1px;
+    //background: $gray4;
+    border-radius: 8px;
+    border: 1px solid $gray4;
+    overflow: hidden;
+    @include mobile() {
+      grid-template-columns: repeat($mobile-columns, 1fr);
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid $gray4;
+    border-right: 1px solid $gray4;
+    //margin-top: -1px;
+    //margin-left: -1px;
+    position: relative;
+    //background: $white;
+    margin-bottom: -1px;
+
+    img {
+      max-width: 90%;
+      max-height: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &:nth-child(#{$desktop-columns}n) {
+      border-right: 0;
+    }
+
+    @include mobile() {
+      &:nth-child(#{$desktop-columns}n) {
+        border-right: 1px solid $gray4;
+      }
+
+      &:nth-child(#{$mobile-columns}n) {
+        border-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+
+    svg {
+      width: 48px;
+      height: 12px;
+      margin-left: 18px;
+    }
+
+    @include mobile() {
+      position: static;
+      margin-left: auto;
+      margin-top: 24px;
+    }
+  }
+
+  &--sm {
+    #{$this} {
+      &__container {
+        @include mobile() {
+          max-width: none;
+        }
+      }
+
+      &__items {
+        @include mobile() {
+          width: 100%;
+          grid-template-columns: repeat($mobile-sm-columns, 1fr);
+          grid-template-rows: 1fr min-content;
+        }
+      }
+
+      &__item {
+        @include mobile() {
+          &:nth-child(#{$mobile-columns}n) {
+            border-right: 1px solid $gray4;
+          }
+          &:nth-child(#{$mobile-sm-columns}n) {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

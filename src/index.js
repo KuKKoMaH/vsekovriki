@@ -1,0 +1,32 @@
+import 'jquery';
+import 'selectize';
+import './js/scriptLoader';
+import './js/breakpoints';
+import './js/init';
+import './js/initGallery';
+import './style';
+import './sprites';
+
+import './modules/popup/popup.js';
+
+import './modules/header/header.js';
+import './modules/footer/footer.js';
+import './modules/frontSlider/frontSlider.js';
+import './modules/welcomeText/welcomeText.js';
+import './modules/alphabetCatalog/alphabetCatalog.js';
+import './modules/constructor/constructor.js';
+import './modules/brandsGrid/brandsGrid.js';
+import './modules/servicesSlider/servicesSlider.js';
+import './modules/gallery/gallery.js';
+import './modules/testimonialsSlider/testimonialsSlider.js';
+import './modules/orderMarquee/orderMarquee.js';
+import './modules/question/question.js';
+import './modules/footerMenu/footerMenu.js';
+import './modules/head/head.js';
+import './modules/brandsList/brandsList.js';
+import './modules/seoText/seoText.js';
+import './modules/modelsList/modelsList.js';
+import './modules/contacts/contacts.js';
+import './modules/newsList/newsList.js';
+import './modules/news/news.js';
+import './modules/testimonials/testimonials.js';
