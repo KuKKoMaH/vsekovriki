@@ -1,0 +1,13 @@
+.photos.block.gallery
+  .photos__title
+    img(src=require('src/modules/photos/img/100+.svg') alt="100+")
+    | фото ковриков#[br] наших клиентов!
+  .photos__container
+    .photos__items
+      each i in [1,2,3,4,5,6,7,8]
+        a.photos__item.gallery__item(href=require('src/modules/photos/img/gallery_01.jpg') data-pswp-width=350 data-pswp-height=380 target="_blank" data-cropped="true")
+          img(src=require('src/modules/photos/img/gallery_01.jpg'))
+
+    a.brandsGrid__link(href='#')
+      | Больше фото
+      +the_svg('arrow-right')

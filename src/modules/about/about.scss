@@ -1,0 +1,83 @@
+.about {
+  $this: &;
+
+  &__block {
+    position: relative;
+    border-radius: 17px;
+    padding: 58px 64px;
+    overflow: hidden;
+    box-shadow: 0px 2px 3px 0px #A6A6A61A,
+    0px 6px 6px 0px #A6A6A617,
+    0px 14px 8px 0px #A6A6A60D,
+    0px 25px 10px 0px #A6A6A603,
+    0px 39px 11px 0px #A6A6A600;
+    @include mobile() {
+      padding: 42px 8px;
+      text-align: center;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include mobile() {
+      max-height: 120px;
+      width: auto;
+    }
+  }
+
+  &__content {
+    padding-right: 360px;
+    @include mobile() {
+      padding: 100px 0 0 0;
+    }
+
+  }
+
+  &__bullets {
+    margin-top: 36px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    @include mobile() {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__bullet {
+    max-width: 330px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    @include mobile() {
+      max-width: 250px;
+      font-size: 16px;
+      margin-bottom: 50px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__bulletImg {
+    height: 140px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile() {
+      height: 80px;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      @include mobile() {
+      }
+    }
+  }
+}

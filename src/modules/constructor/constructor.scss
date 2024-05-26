@@ -1,22 +1,35 @@
 .constructor {
   $this: &;
 
+  position: relative;
   background: url(./img/constructor_bg.jpg) 50% 50%;
   background-size: cover;
   padding: 96px 0 64px;
-  @include mobile() {
-    padding: 32px 0;
 
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1;
+  }
+
+  @include mobile() {
+    padding: 60px 0 0;
   }
 
   &__title {
     position: relative;
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 600;
     color: $blue;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
     @include mobile() {
-      font-size: 22px;
+      font-size: 32px;
+      margin-bottom: 20px;
     }
 
     &:after {
@@ -32,8 +45,8 @@
       @include mobile() {
         width: 12px;
         height: 12px;
-        left: 101px;
-        top: 10px;
+        left: 141px;
+        top: 19px;
       }
     }
   }
@@ -41,14 +54,15 @@
   &__subtitle {
     padding-left: 35px;
     margin-top: -20px;
-    font-size: 72px;
-    line-height: 1;
-    -webkit-text-stroke: 2px $red;
-    color: transparent;
+
     @include mobile() {
-      font-size: 36px;
       padding-left: 20px;
-      margin-top: -10px;
+      margin-top: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
   }
 
@@ -60,43 +74,41 @@
 
   &__left {
     width: 325px;
-    @include media-max-width(1300px) {
-      width: auto;
-      flex: 1;
-      padding-right: 16px;
-    }
     @include mobile() {
+      flex: auto;
+      width: 100%;
       padding: 0;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
   }
 
   &__center {
     flex: 1;
-    padding: 0 32px;
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
     position: relative;
-    @include media-max-width(1300px) {
-      padding: 0;
-      margin-top: 32px;
-      order: 3;
-      flex-basis: 100%;
-    }
     @include mobile() {
-      margin: 0;
+      padding: 0;
+      flex: auto;
+      width: 100%;
+      margin-bottom: 16px;
     }
   }
 
   &__right {
     width: 445px;
+    display: flex;
+    flex-direction: column;
     @include media-max-width(1300px) {
       width: auto;
       flex: 1;
       padding-left: 16px;
     }
     @include mobile() {
+      flex: auto;
+      width: 100%;
       padding: 0;
       margin-bottom: 24px;
     }
@@ -104,9 +116,9 @@
 
   &__block {
     background: $white;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     padding: 24px;
-    border-radius: 4px;
+    border-radius: 12px;
     @include mobile() {
       padding: 18px;
     }
@@ -115,148 +127,83 @@
       margin-bottom: 0;
     }
 
-    &--total {
-      border: 2px solid $red;
-      padding: 22px;
-    }
-
     &--full {
       flex: 1;
+      padding-bottom: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--stretch {
+      flex: 1;
+    }
+
+    &--inactive {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $white;
+        border-radius: 12px;
+        opacity: .7;
+        z-index: 1;
+      }
+
+      #{$this} {
+        &__note {
+          display: flex;
+        }
+      }
+    }
+
+    .select {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
   &__blockTitle {
-    font-size: 24px;
-    margin-bottom: 18px;
-    @include mobile() {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
 
-  &__forms {
+  &__shapes {
     display: flex;
     align-items: flex-start;
     //justify-content: center;
-    margin: 0 -24px;
+    margin: 0 -12px;
   }
 
-  &__form {
-    margin: 0 24px;
-    text-align: center;
-    font-size: 16px;
-    color: $gray3;
-    @include anim();
-
-    img {
-      display: block;
-      margin-bottom: 12px;
-      width: 82px;
-      height: 82px;
-      border-radius: 50%;
-      border: 2px solid $gray;
-      @include anim();
-    }
-
-    &:hover {
-      color: $gray3;
-
-      img {
-        border-color: $gray3;
-      }
-    }
-
-    &--active {
-      color: $black;
-
-      img {
-        border-color: $red;
-      }
-
-      &:hover {
-        color: $black;
-
-        img {
-          border-color: $red;
-        }
-      }
-    }
+  &__shape {
+    margin: 0 12px;
   }
 
-  &__colors {
+  &__options {
+    margin: 8px 0;
+  }
+
+  &__optionsList {
     display: flex;
     flex-wrap: wrap;
-    margin: -12px;
+    margin: -8px;
   }
 
-  &__color {
-    padding: 12px;
-
-    img {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 2px solid $gray;
-      @include anim();
-    }
-
-    &:hover {
-      img {
-        border-color: $gray3;
-      }
-    }
-
-    &--active {
-
-      img {
-        border-color: $red;
-      }
-
-      &:hover {
-        img {
-          border-color: $red;
-        }
-      }
-    }
+  &__option {
+    padding: 8px;
+    position: relative;
   }
 
   &__accessory {
-    margin-bottom: 24px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__complect {
-    display: flex;
-    @include mobile() {
-      flex-direction: column-reverse;
-      align-items: center;
-    }
-  }
-
-  &__complectButtons {
-    flex-shrink: 0;
-    width: 150px;
-    margin-right: 25px;
-    @include mobile() {
-      margin: 24px 0 0 0;
-    }
-  }
-
-  &__complectButton {
-    display: block;
-    width: 100%;
-    min-height: 38px;
-    padding: 4px 0;
-    border-radius: 19px;
-    border: 1px solid $gray3;
-    color: $gray3;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.2;
-    text-align: center;
     margin-bottom: 24px;
 
     &:last-child {
@@ -306,25 +253,45 @@
   }
 
   &__price {
-    font-size: 42px;
-    line-height: 1;
-    margin-top: -10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: -8px;
+
+    span {
+      font-size: 36px;
+      @include mobile() {
+        font-size: 20px;
+      }
+    }
+
     @include mobile() {
-      font-size: 32px;
-      margin-top: -5px;
+      font-size: 20px;
     }
   }
 
   &__note {
-    display: flex;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    right: 24px;
+    transform: translateY(-50%);
+    z-index: 1;
+    background: $white;
+    border-radius: 12px;
     align-items: center;
-    color: $gray3;
+    padding: 24px;
+    @include mobile() {
+      font-size: 12px;
+    }
 
     svg {
       width: 32px;
       height: 32px;
       flex-shrink: 0;
-      margin-right: 24px;
+      margin-right: 12px;
+      color: $gray500;
       @include mobile() {
         width: 24px;
         height: 24px;
@@ -334,10 +301,11 @@
   }
 
   &__noteText {
-    font-size: 16px;
-    font-weight: 400;
+  }
+
+  &__preview {
     @include mobile() {
-      font-size: 12px;
+      height: 300px;
     }
   }
 
@@ -348,5 +316,53 @@
     width: 100%;
     transform: translateY(-50%);
     text-align: center;
+    z-index: 1;
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  &__blockPrice {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__blockPriceButton {
+    display: none;
+    @include mobile() {
+      margin-left: auto;
+      display: block;
+    }
+  }
+
+  &__accessoirImage {
+    margin-bottom: 8px;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__accessoirName {
+    font-weight: 600;
+    margin-bottom: 12px;
+    @include mobile() {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__accessoirFooter {
+    display: flex;
+    align-items: center;
+  }
+
+  &__accessoirPrice {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__accessoirAction {
+    margin-left: auto;
+    width: 130px;
   }
 }

@@ -8,7 +8,6 @@
     }
 
     ul {
-      page-break-inside: avoid;
     }
 
     ul, li {
@@ -48,6 +47,8 @@
   }
 
   &__item {
+    page-break-inside: avoid;
+
     position: relative;
   }
 

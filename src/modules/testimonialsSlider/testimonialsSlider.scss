@@ -1,21 +1,19 @@
 .testimonialsSlider {
   $this: &;
 
-  background: rgba($gray3, .2);
-  padding: 92px 0;
+  background: $gray200;
+  padding: 100px 0;
   @include mobile() {
-    padding: 32px 0;
+    padding: 44px 0;
   }
 
   &__title {
-    font-size: 42px;
+    font-size: 40px;
     font-weight: 600;
-    margin-bottom: 50px;
-    padding: 0 42px;
+    margin-bottom: 48px;
     @include mobile() {
-      font-size: 22px;
-      padding: 0;
-      margin-bottom: 18px;
+      font-size: 24px;
+      margin-bottom: 24px;
     }
   }
 
@@ -30,7 +28,7 @@
 
   &__slider {
     overflow: hidden;
-    border: 1px solid $gray3;
+    border: 1px solid $gray400;
     border-radius: 8px;
     margin: 0 42px;
     @include mobile() {
@@ -98,7 +96,7 @@
 
     &:hover {
       svg {
-        color: $gray;
+        color: $gray3;
       }
     }
 

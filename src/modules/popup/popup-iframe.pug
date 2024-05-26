@@ -1,7 +1,7 @@
-#iframe-popup.popup.micromodal-slide(aria-hidden="true")
+#iframe-popup.popup.popup--iframe.micromodal-slide(aria-hidden="true")
   .popup__overlay(tabindex="-1" data-micromodal-close)
     .popup__container(role="dialog" aria-modal="true")
-      //button.popup__close(data-micromodal-close): +the_svg('close')
+      button.popup__close(data-micromodal-close): +the_svg('close-popup')
       .popup__iframe
-        iframe(allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      //iframe(allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 

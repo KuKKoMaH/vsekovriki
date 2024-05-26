@@ -1,0 +1,9 @@
+.productGallery
+  .productGallery__slider
+    .productGallery__slides
+      each i in [1,2,3,4,5]
+        .productGallery__slide: img(src=require('src/img/image 1.jpg'))
+
+  .productGallery__thumbs
+    each i in [1,2,3,4,5]
+      .productGallery__thumb: button.productGallery__thumbButton: img(src=require('src/img/image 1.jpg'))

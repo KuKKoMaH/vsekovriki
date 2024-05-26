@@ -4,25 +4,29 @@
 
   &-control {
     text-align: left;
+    font-weight: normal;
 
 
     .item {
       flex: 1;
-      display: flex;
-      align-items: center;
+      //display: flex;
+      //align-items: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 
   &-input {
     position: relative;
-    height: 40px;
-    border: 1px solid $gray;
-    padding: 0 45px 0 10px;
+    height: 44px;
+    border: 1px solid $gray400;
+    border-radius: 8px;
+    padding: 0 45px 0 14px;
     display: flex;
     align-items: center;
-    font-size: 15px;
-    @include ls();
-    line-height: (18/15);
+    font-size: 16px;
+    line-height: 1.2;
     cursor: pointer;
     @include anim();
 
@@ -33,7 +37,7 @@
       top: 50%;
       width: 5px;
       height: 1px;
-      //background: $gray-dark;
+      background: $gray900;
     }
 
     &:before {
@@ -47,24 +51,28 @@
     }
 
     &:hover {
-      //border-color: $gray-dark;
+      border-color: $gray600;
     }
 
     &.input-active {
-      //border-color: $gray-dark;
+      border-color: $gray600;
     }
 
     &.disabled {
-      background: $gray;
+      background: $black50;
+      color: $gray500;
 
       &:hover {
-        border-color: $gray;
+        border-color: $gray400;
+      }
+      &:before, &:after {
+        background: $gray500;
       }
     }
 
-    input {
-      display: none;
-    }
+    //input {
+    //  display: none;
+    //}
   }
 
 
@@ -72,7 +80,7 @@
     position: absolute;
     background: #FFFFFF;
     box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.25);
-    border: 1px solid $gray;
+    border: 1px solid $gray300;
     //border-radius: 4px;
     z-index: 3;
     margin-top: 2px;
@@ -88,8 +96,7 @@
       @include anim();
 
       &.active {
-        //background: $green-dark;
-        color: $white;
+        background: $gray200;
       }
 
       //&.selected {

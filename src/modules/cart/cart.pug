@@ -1,0 +1,52 @@
+.cart
+  .cart__headers
+    .cart__main Товаров: 2
+    .cart__quantity Кол-во
+    .cart__cost Цена
+    .cart__total Сумма
+    .cart__remove
+
+  each i in [1,2,3]
+    .cart__item
+      .cart__main
+        .cart__img: img(src=require('src/img/image 1.jpg'))
+        .cart__info
+          a.cart__name(href='#') Комплект ковриков в салон для Audi e-tron I (2018-...)
+          .cart__description Ромб, черный, черный
+
+      .cart__quantity
+        .counter
+          button.counter__button: +the_svg('-')
+          input.counter__input
+          button.counter__button: +the_svg('+')
+
+      .cart__cost
+        .cart__header Цена
+        .cart__prices
+          .cart__priceOld 3 000 ₽
+          .cart__price 2 590 ₽
+
+      .cart__total
+        .cart__header Сумма
+        .cart__sum 2 590 ₽
+
+      .cart__remove
+        button.cart__removeButton
+          +the_svg('remove')
+
+      .cart__removeSm
+        button.btn.btn--outline
+          +the_svg('remove')
+          span Убрать
+
+  .cart__more
+    a.btn.btn--outline(href='#')
+      +the_svg('+')
+      span Добавить еще товар
+
+  .cart__footer
+    .cart__footerTotal
+      | Сумма заказа:
+      .cart__footerTotalSum 5 180 ₽
+    .cart__footerAction
+      a(href='#').btn.btn--lg Оформить заказ

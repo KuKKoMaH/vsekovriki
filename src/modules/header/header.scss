@@ -1,6 +1,6 @@
 .header {
   $this: &;
-  padding-bottom: 18px;
+  padding-bottom: 15px;
 
   &__top {
     background: $blue;
@@ -11,46 +11,6 @@
       height: 100%;
       display: flex;
       align-items: center;
-    }
-  }
-
-  &__city {
-    display: flex;
-    align-items: center;
-
-    &:after {
-      content: '';
-      display: block;
-      width: 0px;
-      height: 0px;
-      border-style: solid;
-      border-width: 9px 6px 0 6px;
-      border-color: $white transparent transparent transparent;
-      margin-left: 8px;
-      margin-top: 3px;
-      @include mobile() {
-        border-width: 6px 4px 0 4px;
-      }
-    }
-  }
-
-  &__cityIcon {
-    margin-right: 12px;
-    @include mobile() {
-      display: none;
-    }
-
-    svg {
-      display: block;
-      width: 22px;
-      height: 22px;
-    }
-  }
-
-  &__cityName {
-    text-decoration: underline;
-    @include mobile() {
-      font-size: 12px;
     }
   }
 
@@ -97,7 +57,7 @@
   }
 
   &__main {
-    margin-top: 20px;
+    padding-top: 24px;
 
     .c {
       display: flex;
@@ -106,10 +66,12 @@
 
   &__logo {
     flex-shrink: 0;
+    text-decoration: none;
   }
 
   &__logoImage {
     display: block;
+    height: auto;
     @include mobile() {
       max-width: 120px;
     }
@@ -167,7 +129,8 @@
     ul {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      //justify-content: space-between;
+      justify-content: flex-end;
       margin: 0 -5px;
       @include mobile() {
         margin: 0;
@@ -178,7 +141,7 @@
     }
 
     li {
-      //margin-left: 42px;
+      margin-left: 36px;
       padding: 0 5px;
       flex-shrink: 0;
       @include mobile() {
@@ -228,13 +191,14 @@
     display: block;
     min-width: 320px;
     margin: 0 18px;
+    z-index: 1;
     @include mobile() {
       display: none;
     }
   }
 
   &__searchInput {
-    border: 1px solid $gray;
+    border: 1px solid $gray400;
     border-radius: 16px;
     height: 32px;
     padding: 0 48px 0 18px;
@@ -250,7 +214,7 @@
     transform: translateY(-50%);
 
     svg {
-      color: $gray;
+      color: $gray400;
       width: 22px;
       height: 22px;
       display: block;
@@ -268,7 +232,45 @@
       display: block;
       width: 30px;
       height: 30px;
-      color: $gray;
+      color: $gray400;
+    }
+  }
+
+  &__searchPopup {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: -16px;
+    width: 100%;
+    border: 1px solid $gray300;
+    border-top: 0;
+    border-radius: 0 0 8px 8px;
+    background: $white;
+    z-index: -1;
+    overflow: hidden;
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__searchResults {
+    margin-top: 16px;
+    max-height: 180px;
+    overflow: auto;
+  }
+
+  &__searchResult {
+    display: block;
+    min-height: 32px;
+    padding: 8px 12px;
+    font-size: 13px;
+    text-decoration: none;
+    @include anim();
+
+    &:hover {
+      background: $gray200;
     }
   }
 
@@ -283,7 +285,7 @@
       display: block;
       width: 30px;
       height: 30px;
-      color: $gray;
+      color: $gray400;
     }
   }
 

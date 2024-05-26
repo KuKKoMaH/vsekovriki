@@ -5,6 +5,7 @@ const config = {
   awaitCloseAnimation: true,
   onShow:              ( modal, button, event ) => {
     if (!event) return;
+    event.preventDefault();
     let $el = $(event.target);
     if (!$el.data('youtubeId')) $el = $el.parents('[data-youtube-id]');
     const youtubeId = $el.data('youtubeId');

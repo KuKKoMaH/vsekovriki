@@ -1,14 +1,16 @@
 .frontSlider {
   $this: &;
   position: relative;
+  margin: 40px 0 148px 0;
+  @include mobile() {
+    margin: 0 calc(-15px - 8px) 60px;
+  }
 
   &__slider {
-    margin-top: -$content-padding + 12px;
     height: 640px;
     border-radius: 8px;
     overflow: hidden;
     @include mobile() {
-      margin-top: -$content-padding-sm + 12px;
       height: 280px;
     }
   }
@@ -58,6 +60,21 @@
       font-size: 30px;
       text-align: center;
     }
+
+    img {
+      vertical-align: unset;
+      @include mobile() {
+        max-height: 22px;
+      }
+    }
+  }
+
+  &__bullets {
+    @include mobile() {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
   }
 
   &__bullet {
@@ -66,8 +83,8 @@
     padding-left: 70px;
     @include mobile() {
       font-size: 14px;
-      margin-top: 15px;
-      padding-left: 45px;
+      margin-top: 12px;
+      padding-left: 28px;
     }
 
 
@@ -76,6 +93,7 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
+      transform-origin: 0 50%;
       @include mobile() {
         transform: translateY(-50%) scale(.5);
       }

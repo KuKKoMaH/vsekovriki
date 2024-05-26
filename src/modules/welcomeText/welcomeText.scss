@@ -1,5 +1,8 @@
 .welcomeText {
   $this: &;
+  @include mobile() {
+    text-align: center;
+  }
 
   &__title {
     text-align: center;

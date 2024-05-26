@@ -4,7 +4,10 @@
       .frontSlider__slide
         img.frontSlider__img(src=require('src/modules/frontSlider/img/slide.jpg'))
         .frontSlider__content
-          .frontSlider__title Автомобильные#[br] #[span.outline EVA]-коврики
+          .frontSlider__title
+            |Автомобильные#[br]
+            img(src=require('src/modules/frontSlider/img/EVA.svg') alt="EVA" title="EVA")
+            |-коврики
           .frontSlider__bullets
             .frontSlider__bullet
               img(src=require('src/modules/frontSlider/img/frontSlider_01.svg'))
@@ -16,12 +19,12 @@
               img(src=require('src/modules/frontSlider/img/frontSlider_03.svg'))
               | Получите заказ где Вам удобно
 
-      .frontSlider__slide
-        img.frontSlider__img(src=require('src/modules/frontSlider/img/slide.jpg'))
-        .frontSlider__content
-          .frontSlider__title Автомобильные#[br] #[span.outline EVA]-коврики
+      //.frontSlider__slide
+      //  img.frontSlider__img(src=require('src/modules/frontSlider/img/slide.jpg'))
+      //  .frontSlider__content
+      //    .frontSlider__title Автомобильные#[br] #[span.outline EVA]-коврики
 
   .frontSlider__pagination
 
   .frontSlider__button
-    a.btn.btn--big(href='#') Подобрать коврик
+    a.btn.btn--lg(href='#') Подобрать коврик

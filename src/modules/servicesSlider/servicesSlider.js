@@ -24,5 +24,6 @@ initSlider('.servicesSlider__slider', ($el) => ({
     delay: 0
   },
   speed: 10000,
+  // speed: 10000,
   allowTouchMove: false,
 }))

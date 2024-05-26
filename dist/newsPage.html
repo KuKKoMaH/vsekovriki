@@ -7,15 +7,82 @@
     <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no">
     <!--link(rel="stylesheet" media="all" href="style.css")-->
     <!--link(rel="shortcut icon" href="/favicon.ico")-->
-  <link href="style.css?1706901470373" rel="stylesheet"></head>
+  <link href="style.css?1716740525601" rel="stylesheet"></head>
   <body onunload="">
     <header class="header">
       <div class="header__top">
         <div class="c">
-          <button class="header__city"><span class="header__cityIcon">
-              <svg>
-                <use xlink:href="img/sprite.svg#geo-usage"></use>
-              </svg></span><span class="header__cityName">Санкт-Петербург</span></button>
+          <div class="citySelect">
+            <button class="citySelect__button"><span class="citySelect__icon">
+                <svg>
+                  <use xlink:href="img/sprite.svg#geo-usage"></use>
+                </svg></span><span class="citySelect__name">Санкт-Петербург</span></button>
+            <div class="citySelect__popup">
+              <button class="citySelect__close" data-micromodal-close>
+                <svg>
+                  <use xlink:href="img/sprite.svg#close-popup-usage"></use>
+                </svg>
+              </button>
+              <div class="citySelect__title">Выберите Ваш город</div>
+              <div class="citySelect__list">
+                <div class="citySelect__item"><a href="#">Астрахань</a></div>
+                <div class="citySelect__item"><a href="#">Балашиха</a></div>
+                <div class="citySelect__item"><a href="#">Барнаул</a></div>
+                <div class="citySelect__item"><a href="#">Белгород</a></div>
+                <div class="citySelect__item"><a href="#">Брянск</a></div>
+                <div class="citySelect__item"><a href="#">Чебоксары</a></div>
+                <div class="citySelect__item"><a href="#">Челябинск</a></div>
+                <div class="citySelect__item"><a href="#">Чита</a></div>
+                <div class="citySelect__item"><a href="#">Екатеринбург</a></div>
+                <div class="citySelect__item"><a href="#">Хабаровск</a></div>
+                <div class="citySelect__item"><a href="#">Ижевск</a></div>
+                <div class="citySelect__item"><a href="#">Иркутск</a></div>
+                <div class="citySelect__item"><a href="#">Иваново</a></div>
+                <div class="citySelect__item"><a href="#">Ярославль</a></div>
+                <div class="citySelect__item"><a href="#">Калининград</a></div>
+                <div class="citySelect__item"><a href="#">Калуга</a></div>
+                <div class="citySelect__item"><a href="#">Казань</a></div>
+                <div class="citySelect__item"><a href="#">Кемерово</a></div>
+                <div class="citySelect__item"><a href="#">Киров</a></div>
+                <div class="citySelect__item"><a href="#">Краснодар</a></div>
+                <div class="citySelect__item"><a href="#">Красноярск</a></div>
+                <div class="citySelect__item"><a href="#">Курган</a></div>
+                <div class="citySelect__item"><a href="#">Курск</a></div>
+                <div class="citySelect__item"><a href="#">Липецк</a></div>
+                <div class="citySelect__item"><a href="#">Магнитогорск</a></div>
+                <div class="citySelect__item"><a href="#">Махачкала</a></div>
+                <div class="citySelect__item"><a href="#">Москва</a></div>
+                <div class="citySelect__item"><a href="#">Набережные Челны</a></div>
+                <div class="citySelect__item"><a href="#">Нижний Новгород</a></div>
+                <div class="citySelect__item"><a href="#">Новокузнецк</a></div>
+                <div class="citySelect__item"><a href="#">Новосибирск</a></div>
+                <div class="citySelect__item"><a href="#">Омск</a></div>
+                <div class="citySelect__item"><a href="#">Орел</a></div>
+                <div class="citySelect__item"><a href="#">Пенза</a></div>
+                <div class="citySelect__item"><a href="#">Пермь</a></div>
+                <div class="citySelect__item"><a href="#">Ростов-на-Дону</a></div>
+                <div class="citySelect__item"><a href="#">Рязань</a></div>
+                <div class="citySelect__item"><a href="#">Самара</a></div>
+                <div class="citySelect__item"><a href="#">Саранск</a></div>
+                <div class="citySelect__item"><a href="#">Саратов</a></div>
+                <div class="citySelect__item"><a href="#">Севастополь</a></div>
+                <div class="citySelect__item"><a href="#">Симферополь</a></div>
+                <div class="citySelect__item"><a href="#">Сочи</a></div>
+                <div class="citySelect__item"><a href="#">Санкт-Петербург</a></div>
+                <div class="citySelect__item"><a href="#">Ставрополь</a></div>
+                <div class="citySelect__item"><a href="#">Тольятти</a></div>
+                <div class="citySelect__item"><a href="#">Тула</a></div>
+                <div class="citySelect__item"><a href="#">Тюмень</a></div>
+                <div class="citySelect__item"><a href="#">Тверь</a></div>
+                <div class="citySelect__item"><a href="#">Уфа</a></div>
+                <div class="citySelect__item"><a href="#">Ульяновск</a></div>
+                <div class="citySelect__item"><a href="#">Владикавказ</a></div>
+                <div class="citySelect__item"><a href="#">Владивосток</a></div>
+                <div class="citySelect__item"><a href="#">Волгоград</a></div>
+                <div class="citySelect__item"><a href="#">Воронеж</a></div>
+              </div>
+            </div>
+          </div>
           <div class="header__topAside"><a class="header__topContact" href="#" target="_blank">
               <svg>
                 <use xlink:href="img/sprite.svg#whatsapp-usage"></use>
@@ -52,7 +119,7 @@
               </ul>
             </div>
             <div class="header__info">
-              <div class="header__constructor"><a class="btn" href="#">Онлайн-конструктор</a></div>
+              <div class="header__constructor"><a class="btn btn--sm" href="#">Онлайн-конструктор</a></div>
               <form class="header__search">
                 <input class="header__searchInput" placeholder="Поиск по авто">
                 <button class="header__searchIcon">
@@ -60,6 +127,9 @@
                     <use xlink:href="img/sprite.svg#search-usage"></use>
                   </svg>
                 </button>
+                <div class="header__searchPopup">
+                  <div class="header__searchResults"><a class="header__searchResult" href="#">ГАЗ 3302/2705/3221 Gazel Buisnes 3302/2705/3221 1994-2010 2х местная кабина.</a><a class="header__searchResult" href="#">ГАЗ ГАЗель Next 1 2013-2024 Грузопассажирская</a><a class="header__searchResult" href="#">Audi A3 III (8V) Хэтчбек (2012 - 2016)</a><a class="header__searchResult" href="#">Audi A4 IV  (B8, 8K) Седан (2007 - 2015)</a><a class="header__searchResult" href="#">Audi A3 III (8V) Хэтчбек (2012 - 2016)</a><a class="header__searchResult" href="#">Audi A4 IV  (B8, 8K) Седан (2007 - 2015)</a><a class="header__searchResult" href="#">EXEED TXL 1 2019-н.в. Внедорожник 5 дв.</a></div>
+                </div>
               </form><a class="header__searchButton">
                 <svg>
                   <use xlink:href="img/sprite.svg#search-usage"></use>
@@ -126,16 +196,18 @@
       </div>
       <div class="footer__politic"><a href="#">Политика конфеденциальности</a></div>
     </footer>
-    <!--include ../modules/photoswipe/photoswipe-->
     <div class="popup micromodal-slide" id="callback-popup" aria-hidden="true">
       <div class="popup__overlay" tabindex="-1" data-micromodal-close>
         <div class="popup__container" role="dialog" aria-modal="true">
-          <!--button.popup__close(data-micromodal-close): +the_svg('close')-->
+          <button class="popup__close" data-micromodal-close>
+            <svg>
+              <use xlink:href="img/sprite.svg#close-popup-usage"></use>
+            </svg>
+          </button>
           <div class="popup__form">
             <form>
               <div class="form">
                 <div class="form__title">Обратный звонок</div>
-                <div class="form__text">Не следует, однако забывать, что дальнейшее развитие различных форм деятельности позволяет выполнять важные задания по разработке дальнейших направлений развития. Задача организации.</div>
                 <div class="form__content">
                   <label class="input">
                     <div class="input__label">Имя</div>
@@ -149,19 +221,18 @@
                       <input type="tel">
                     </div>
                   </label>
-                  <div class="file">
-                    <input type="file">
-                    <svg>
-                      <use xlink:href="img/sprite.svg#file-usage"></use>
-                    </svg><span class="file__name">Прикрепите файл</span>
-                  </div>
+                  <!---->
+                  <!--.file-->
+                  <!--  input(type='file')-->
+                  <!--  +the_svg('file')-->
+                  <!--  span.file__name Прикрепите файл-->
                 </div>
                 <div class="form__button">
-                  <button class="btn btn--black btn--rightTop">Получить точный расчет кровли</button>
+                  <button class="btn">Отправить</button>
                 </div>
               </div>
             </form>
-          </div>
+          </div><img class="popup__decor popup__decor--01" src="img/modules_popup_img_popup_decor_01.jpg"><img class="popup__decor popup__decor--02" src="img/modules_popup_img_popup_decor_02.jpg">
           <!--.popup__iframe-->
           <!--iframe(allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)-->
           <!--.popup__image(style='background-image: url(' + require('src/modules/popup/img/img.jpg') + ')')-->
@@ -285,13 +356,16 @@
         </div>
       </div>
     </div>
-    <div class="popup micromodal-slide" id="iframe-popup" aria-hidden="true">
+    <div class="popup popup--iframe micromodal-slide" id="iframe-popup" aria-hidden="true">
       <div class="popup__overlay" tabindex="-1" data-micromodal-close>
         <div class="popup__container" role="dialog" aria-modal="true">
-          <!--button.popup__close(data-micromodal-close): +the_svg('close')-->
-          <div class="popup__iframe">
-            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+          <button class="popup__close" data-micromodal-close>
+            <svg>
+              <use xlink:href="img/sprite.svg#close-popup-usage"></use>
+            </svg>
+          </button>
+          <div class="popup__iframe"></div>
+          <!--iframe(allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)-->
         </div>
       </div>
     </div>
@@ -299,5 +373,5 @@
     <!--include ../modules/popup/popup-politic-->
     <div class="hidden"></div>
     <script>(function ( w, dE ) {function u() {dE.style.setProperty('--scrollbar-width', w.innerWidth - dE.clientWidth + "px");}w.addEventListener('resize', u);u()})(window, document.documentElement)</script>
-  <script defer src="app.js"></script></body>
+  <script defer src="js/main.js"></script></body>
 </html>

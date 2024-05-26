@@ -12,9 +12,10 @@
   }
 
   &__contacts {
-    padding-right: 64px;
+    margin-right: 64px;
+    flex: 1;
     @include mobile() {
-      padding: 0 0 64px;
+      margin: 0 0 64px;
     }
   }
 
@@ -91,7 +92,7 @@
   &__map {
     flex: 1;
     border-radius: 10px;
-    min-height: 400px;
-    background: $gray4;
+    height: 400px;
+    background: $gray200;
   }
 }

@@ -1,23 +1,19 @@
 .head {
   $this: &;
 
-  & + * {
-    margin-top: 0;
+  margin-bottom: 48px;
+  @include mobile() {
+    margin-bottom: 24px;
   }
 
-  &--underline {
-    padding-bottom: 24px;
-    border-bottom: 1px solid $gray4;
-    margin-bottom: 24px;
-    @include mobile() {
-      padding-bottom: 16px;
-      margin-bottom: 16px;
-    }
+  & + * {
+    margin-top: 0;
   }
 
 
   h1 {
     margin: 0;
+    text-wrap: balance;
   }
 
   p {
@@ -27,6 +23,24 @@
     max-width: 500px;
     @include mobile() {
       font-size: 16px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+  }
+
+  &__aside {
+    margin-left: auto;
+
+    img {
+      max-width: 140px;
+      height: auto;
+    }
+
+    @include mobile() {
+      display: none;
     }
   }
 }

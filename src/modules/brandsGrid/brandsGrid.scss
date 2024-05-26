@@ -11,17 +11,17 @@ $mobile-sm-columns: 3;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    @include mobile() {
-      max-width: 280px;
-    }
+    //@include mobile() {
+    //  max-width: 320px;
+    //}
   }
 
   &__title {
-    font-size: 16px;
-    color: $blue;
-    margin-bottom: 32px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
     @include mobile() {
-      margin-bottom: 24px;
+      text-align: center;
     }
   }
 
@@ -33,7 +33,7 @@ $mobile-sm-columns: 3;
     //grid-gap: 1px;
     //background: $gray4;
     border-radius: 8px;
-    border: 1px solid $gray4;
+    border: 1px solid $gray400;
     overflow: hidden;
     @include mobile() {
       grid-template-columns: repeat($mobile-columns, 1fr);
@@ -41,8 +41,8 @@ $mobile-sm-columns: 3;
   }
 
   &__item {
-    border-bottom: 1px solid $gray4;
-    border-right: 1px solid $gray4;
+    border-bottom: 1px solid $gray400;
+    border-right: 1px solid $gray400;
     //margin-top: -1px;
     //margin-left: -1px;
     position: relative;
@@ -70,7 +70,7 @@ $mobile-sm-columns: 3;
 
     @include mobile() {
       &:nth-child(#{$desktop-columns}n) {
-        border-right: 1px solid $gray4;
+        border-right: 1px solid $gray400;
       }
 
       &:nth-child(#{$mobile-columns}n) {
@@ -120,7 +120,7 @@ $mobile-sm-columns: 3;
       &__item {
         @include mobile() {
           &:nth-child(#{$mobile-columns}n) {
-            border-right: 1px solid $gray4;
+            border-right: 1px solid $gray400;
           }
           &:nth-child(#{$mobile-sm-columns}n) {
             border-right: 0;

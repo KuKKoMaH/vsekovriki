@@ -1,0 +1,80 @@
+.productConstructor
+  .productConstructor__block
+    .productConstructor__label Форма ячеек
+    .productConstructor__shapes
+      .productConstructor__shape
+        button.colorButton.colorButton--lg.colorButton--active
+          .colorButton__img(style="background: url(" + require('src/modules/constructor/img/textrure.png') + ");")
+          | Ромб
+      .productConstructor__shape
+        button.colorButton.colorButton--lg
+          .colorButton__img(style="background: url(" + require('src/modules/constructor/img/textrure.png') + ");")
+          | Сота
+
+  .productConstructor__block
+    .productConstructor__label Выберите цвет
+    .productConstructor__options
+      .productConstructor__optionsList
+        each i in [0, 1,2,3,4,5,6,7,8]
+          div.productConstructor__option
+            button.colorButton(class=(i === 0 ? 'colorButton--active' : null))
+              img.colorButton__img(src=require('src/modules/constructor/img/textrure.png'))
+
+  .productConstructor__block
+    .productConstructor__label Выберите цвет окантовки
+    .productConstructor__options
+      .productConstructor__optionsList
+        each i in [0, 1,2,3,4,5,6,7,8]
+          div.productConstructor__option
+            button.colorButton(class=(i === 0 ? 'colorButton--active' : null))
+              img.colorButton__img(src=require('src/modules/constructor/img/textrure.png'))
+
+  .productConstructor__block
+    .productConstructor__label Выберите расположение коврика
+    button.complectButton.complectButton--active Водительский
+    button.complectButton Передние
+    button.complectButton Задние
+    button.complectButton В салон
+    button.complectButton В багажник
+    button.complectButton В салон #[br]и багажник
+
+
+  .productConstructor__block
+    .productConstructor__label Аксессуары
+    .productConstructor__accessoir
+      .productConstructor__accessoirImage: img(src=require('src/modules/productConstructor/img/image 2.jpg'))
+      .productConstructor__accessoirName
+        select.select
+          option Подпятник стальной
+          option Подпятник резиновый, серый
+          option Подпятник резиновый, черный
+      .productConstructor__accessoirFooter
+        .productConstructor__accessoirPrice 590 ₽
+        .productConstructor__accessoirAction: button.btn(type="button") Добавить
+
+    .productConstructor__accessoir
+      .productConstructor__accessoirImage: img(src=require('src/modules/productConstructor/img/image 3.jpg'))
+      .productConstructor__accessoirName Значок
+      .productConstructor__accessoirFooter
+        .productConstructor__accessoirPrice 590 ₽
+        .productConstructor__accessoirAction
+          //button.btn(type="button") Добавить
+          .counter
+            button.counter__button: +the_svg('-')
+            input.counter__input
+            button.counter__button: +the_svg('+')
+
+  .productConstructor__price
+    .productConstructor__priceLabel Стоимость:
+    .productConstructor__priceValue
+      .productConstructor__priceOld 3 000 ₽
+      .productConstructor__priceFinal 2 590 ₽
+
+  .productConstructor__actions
+    .productConstructor__action
+      button.btn.btn--block В корзину
+    .productConstructor__action
+      button.btn.btn--block.btn--outline Купить в один клик
+
+  .productConstructor__payments: img(src=require('src/modules/productConstructor/img/cards.png'))
+

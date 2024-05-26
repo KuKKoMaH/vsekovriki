@@ -2,37 +2,28 @@
   display: block;
 
   &__label {
-    font-size: 15px;
-    line-height: (17/15);
-    @include ls();
-    margin-bottom: 5px;
-    @include mobile() {
-      margin-bottom: 4px;
-    }
+    margin-bottom: 8px;
   }
 
   &__input {
     display: block;
-    margin-right: 12px;
     position: relative;
     z-index: 1;
 
     input {
       display: block;
       width: 100%;
-      font-size: 16px;
-      line-height: (22/16);
-      height: 50px;
-      //border: 1px solid $gray-light;
-      border-right-width: 0;
-      padding: 0 25px;
+      height: 44px;
+      border: 1px solid $gray400;
+      border-radius: 8px;
+      padding: 0 14px;
       @include anim();
     }
 
 
-    &:hover {
-      input, &:after {
-        //border-color: $green;
+    &:hover, &:focus-within {
+      input {
+        border-color: $gray600;
       }
     }
 
@@ -44,10 +35,6 @@
 
     &.wpcf7-not-valid {
       border-color: $red;
-
-      &:after {
-        border-color: $red;
-      }
     }
   }
 

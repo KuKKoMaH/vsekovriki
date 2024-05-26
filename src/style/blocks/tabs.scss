@@ -1,0 +1,43 @@
+.tabs {
+
+  &__headers {
+    background: $gray300;
+    border-radius: 5px;
+    padding: 7px;
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  &__header {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    min-height: 47px;
+    padding: 8px;
+    border-radius: 5px;
+
+    &--active {
+      background: $white;
+    }
+  }
+
+  &__bodies {
+    position: relative;
+  }
+
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include hidden();
+    @include anim(.2s);
+    //transform: translateY(15px);
+
+    &--active {
+      position: relative;
+      @include visible();
+      transform: none;
+    }
+  }
+}

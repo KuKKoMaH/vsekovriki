@@ -1,6 +1,8 @@
 .news {
   $this: &;
 
+  @include cf();
+
   &__image {
     float: right;
     margin-left: 72px;

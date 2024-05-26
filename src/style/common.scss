@@ -1,18 +1,18 @@
 html {
-  font-family: 'Cygre', sans-serif;
-  color: $blue;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.6;
-  letter-spacing: .02em;
+  font-family: 'Montserrat', sans-serif;
+  //font-family: 'Cygre', sans-serif;
+  color: $gray900;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
   background: $white;
   overflow-x: hidden;
   overflow-wrap: break-word;
   scroll-behavior: smooth;
-  @include media('md') {
-    font-size: 16px;
-    line-height: 1.375;
-  }
+  //@include media('md') {
+  //  font-size: 16px;
+  //  line-height: 1.375;
+  //}
 }
 
 @media print {
@@ -44,7 +44,7 @@ html, body {
   @include media('md') {
     //padding-left: 15px;
     //padding-right: 15px;
-    max-width: 500px;
+    max-width: $container-sm;
   }
 }
 
@@ -101,7 +101,7 @@ img[data-srcset] {
 }
 
 .block {
-  margin: 80px 0;
+  margin: 100px 0;
   @include mobile() {
     margin: 40px 0;
   }
@@ -120,4 +120,139 @@ img[data-srcset] {
 
   //margin-left: calc(-100vw / 2 + 500px / 2);
   //margin-right: calc(-100vw / 2 + 500px / 2);
+}
+
+$color-button-size: 42px;
+$color-button-size-lg: 80px;
+.colorButton {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  @include anim();
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 2px solid transparent;
+    opacity: 0;
+    @include anim();
+  }
+
+  &:before {
+    border-color: $red;
+    width: $color-button-size;
+    height: $color-button-size;
+  }
+
+  &:after {
+    border-color: $white;
+    top: 2px;
+    width: $color-button-size - 4px;
+    height: $color-button-size - 4px;
+  }
+
+  &:hover {
+    &:before, &:after {
+      opacity: 1;
+    }
+
+    &:before {
+      border-color: $gray600;
+    }
+  }
+
+  &--active {
+    &:before, &:after {
+      opacity: 1;
+    }
+
+    &:before, &:hover:before {
+      border-color: $red;
+    }
+  }
+
+  &--lg {
+    &:before {
+      width: $color-button-size-lg;
+      height: $color-button-size-lg;
+    }
+
+    &:after {
+      width: $color-button-size-lg - 4px;
+      height: $color-button-size-lg - 4px;
+    }
+
+    .colorButton__img {
+      width: $color-button-size-lg;
+      height: $color-button-size-lg;
+    }
+  }
+
+  &__img {
+    width: $color-button-size;
+    height: $color-button-size;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.complectButton {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 4px 24px;
+  border-radius: 46px;
+  border: 1px solid $gray3;
+  color: $gray3;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 12px;
+  @include anim();
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    border-color: $red;
+  }
+
+  &--active {
+    border: 2px solid $red;
+  }
+}
+
+.constructorPreview {
+  position: relative;
+  height: 100%;
+
+  img {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: $red;
+
+  &:empty {
+    display: none;
+  }
 }

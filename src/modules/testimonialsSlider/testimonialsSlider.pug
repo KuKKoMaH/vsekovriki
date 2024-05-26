@@ -1,12 +1,12 @@
 .testimonialsSlider.fullWidth
   .c
-    .testimonialsSlider__title Отзывы наших #[br]клиентов
+    .testimonialsSlider__title Отзывы наших клиентов
     .testimonialsSlider__container
       .testimonialsSlider__slider
         .testimonialsSlider__slides
           each i in [1,2,3,4,5,6,7]
             .testimonialsSlider__slide
-              a.testimonialsSlider__item(href='#')
+              a.testimonialsSlider__item(data-micromodal-trigger="iframe-popup" data-youtube-id="dQw4w9WgXcQ")
                 img(src=require('src/modules/testimonialsSlider/img/testimonialSlider.jpg'))
                 +the_svg('youtube')
       button.testimonialsSlider__nav.testimonialsSlider__nav--prev: +the_svg('triangle-arrow')

@@ -2,7 +2,7 @@
   .c
     .constructor__title
       | Онлайн
-      .constructor__subtitle конструктор
+      .constructor__subtitle: img(src=require('src/modules/constructor/img/constructor.svg') alt='Конструктор')
 
     .constructor__container
       .constructor__left
@@ -13,76 +13,94 @@
             option Audi
             option BWM
           | Модель авто
-          select.select(placeholder='Выберите марку')
+          select.select(placeholder='Выберите марку' disabled)
             option Audi
             option BWM
         .constructor__block
           .constructor__blockTitle Выберите форму ячеек
-          .constructor__forms
-            .constructor__form.constructor__form--active
-              img(src='')
-              | Ромб
-            .constructor__form
-              img(src='')
-              | Сота
+          .constructor__shapes
+            .constructor__shape
+              button.colorButton.colorButton--lg.colorButton--active
+                .colorButton__img(style="background: url(" + require('src/modules/constructor/img/textrure.png') + ");")
+                | Ромб
+            .constructor__shape
+              button.colorButton.colorButton--lg
+                .colorButton__img(style="background: url(" + require('src/modules/constructor/img/textrure.png') + ");")
+                | Сота
 
         .constructor__block
           .constructor__blockTitle Выберите цвет
-          .constructor__colors
+          .constructor__options
+          .constructor__optionsList
             each i in [0, 1,2,3,4,5,6,7,8]
-              button.constructor__color(class=(i === 0 ? 'constructor__color--active' : null))
-                img(src='')
+              .constructor__option
+                button.colorButton(class=(i === 0 ? 'colorButton--active' : null))
+                  img.colorButton__img(src=require('src/modules/constructor/img/textrure.png'))
 
         .constructor__block
           .constructor__blockTitle Выберите цвет окантовки
-          .constructor__colors
-            each i in [0, 1,2,3,4,5,6,7,8]
-              button.constructor__color(class=(i === 0 ? 'constructor__color--active' : null))
-                img(src='')
-
+          .constructor__options
+            .constructor__optionsList
+              each i in [0, 1,2,3,4,5,6,7,8]
+                .constructor__option
+                  button.colorButton(class=(i === 0 ? 'colorButton--active' : null))
+                    img.colorButton__img(src=require('src/modules/constructor/img/textrure.png'))
 
       .constructor__center
-        .constructor__block.constructor__block--full
-          .constructor__button
-            button.btn.btn--big Оформить заказ
+        .constructor__block.constructor__block--full.constructor__block--inactive
+          .constructor__preview
+            .constructorPreview
+              img(src=require('src/modules/constructor/img/car.jpg'))
+              include ./img/constructor_frames.svg
 
-      .constructor__right
-        .constructor__block
-          .constructor__blockTitle Выберите расположение коврика
-          .constructor__complect
-            .constructor__complectButtons
-              button.constructor__complectButton Водительский
-              button.constructor__complectButton Передние
-              button.constructor__complectButton Задние
-              button.constructor__complectButton В салон
-              button.constructor__complectButton В багажник
-              button.constructor__complectButton В салон #[br]и багажник
-            .constructor__positions
-              button.constructor__position.constructor__position--01: img(src=require('src/modules/constructor/img/constructor_01.svg'))
-              button.constructor__position.constructor__position--02: img(src=require('src/modules/constructor/img/constructor_02.svg'))
-              button.constructor__position.constructor__position--03: img(src=require('src/modules/constructor/img/constructor_03.svg'))
-              button.constructor__position.constructor__position--04: img(src=require('src/modules/constructor/img/constructor_04.svg'))
-              button.constructor__position.constructor__position--05: img(src=require('src/modules/constructor/img/constructor_04.svg'))
-              button.constructor__position.constructor__position--06: img(src=require('src/modules/constructor/img/constructor_05.svg'))
-
-        .constructor__block
-          .constructor__blockTitle Выберите аксессуары
-          .constructor__accessory
-            label.checkbox
-              input(type="checkbox")
-              span Подпятник
-
-          .constructor__accessory
-            label.checkbox
-              input(type="checkbox")
-              span Значок
-
-        .constructor__block.constructor__block--total
-          .constructor__blockTitle Стоимость:
-          .constructor__price #[span 750] рублей
-
-        .constructor__block
           .constructor__note
             +the_svg('sign')
             .constructor__noteText Цена на трехрядные автомобили и микроавтобусы может отличаться, уточняйте по телефону
 
+          .constructor__button
+            button.btn.btn--lg Оформить заказ
+
+      .constructor__right
+        .constructor__block.constructor__block--stretch
+          .constructor__blockTitle Выберите расположение коврика
+          .constructor__complect
+            //.constructor__complectButtons
+            button.complectButton.complectButton--active Водительский
+            button.complectButton Передние
+            button.complectButton Задние
+            button.complectButton В салон
+            button.complectButton В багажник
+            button.complectButton В салон #[br]и багажник
+
+        .constructor__block
+          .constructor__blockTitle Подпятник
+          .constructor__accessoirImage: img(src=require('src/modules/productConstructor/img/image 2.jpg'))
+          .constructor__accessoirName
+            select.select
+              option Подпятник стальной
+              option Подпятник резиновый, серый
+              option Подпятник резиновый, черный
+          .constructor__accessoirFooter
+            .constructor__accessoirPrice 590 ₽
+            .constructor__accessoirAction: button.btn(type="button") Добавить
+
+        .constructor__block
+          .constructor__blockTitle Значок
+          .constructor__accessoirImage: img(src=require('src/modules/productConstructor/img/image 3.jpg'))
+          .constructor__accessoirName Значок
+          .constructor__accessoirFooter
+            .constructor__accessoirPrice 590 ₽
+            .constructor__accessoirAction
+              //button.btn(type="button") Добавить
+              .counter
+                button.counter__button: +the_svg('-')
+                input.counter__input
+                button.counter__button: +the_svg('+')
+
+        .constructor__block
+          .constructor__blockPrice
+            div
+              .constructor__blockTitle Стоимость:
+              .constructor__price #[span 10 000] ₽
+            .constructor__blockPriceButton
+              button.btn Заказать

@@ -68,7 +68,7 @@
 }
 
 @mixin ls() {
-  letter-spacing: .01em;
+  letter-spacing: .02em;
 }
 
 @mixin ls-m() {
@@ -90,4 +90,26 @@
     color: $green-dark;
     text-decoration: none;
   }
+}
+
+@mixin shadow() {
+  box-shadow: 0px 2px 24px 0px #00000014;
+}
+
+@mixin outline-button() {
+  border-color: $gray400;
+  background: $white;
+  color: $gray900;
+  @include anim();
+
+  &:hover {
+    border-color: $gray300;
+    background: $gray300;
+  }
+
+  &:active {
+    border-color: $gray400;
+    background: $gray400;
+  }
+
 }

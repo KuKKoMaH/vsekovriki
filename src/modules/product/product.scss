@@ -1,0 +1,40 @@
+$product-constructor-width: 585px;
+$product-constructor-offset: 32px;
+
+.product {
+  $this: &;
+
+  @include cf();
+
+  &__gallery {
+    float: left;
+    width: calc(100% - #{$product-constructor-width} - #{$product-constructor-offset});
+    margin-bottom: 32px;
+    @include mobile() {
+      float: none;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__constructor {
+    float: right;
+    width: $product-constructor-width;
+    margin-left: $product-constructor-offset;
+    @include mobile() {
+      float: none;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 46px;
+    }
+  }
+
+  &__meta {
+    float: left;
+    width: calc(100% - #{$product-constructor-width} - #{$product-constructor-offset});
+    @include mobile() {
+      float: none;
+      width: 100%;
+    }
+  }
+}

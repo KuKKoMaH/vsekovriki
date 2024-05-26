@@ -1,9 +1,12 @@
 #callback-popup.popup.micromodal-slide(aria-hidden="true")
   .popup__overlay(tabindex="-1" data-micromodal-close)
     .popup__container(role="dialog" aria-modal="true")
-      //button.popup__close(data-micromodal-close): +the_svg('close')
+      button.popup__close(data-micromodal-close): +the_svg('close-popup')
       .popup__form
         include ../form/form_callback
+      img.popup__decor.popup__decor--01(src=require('src/modules/popup/img/popup_decor_01.jpg'))
+      img.popup__decor.popup__decor--02(src=require('src/modules/popup/img/popup_decor_02.jpg'))
+
       //.popup__iframe
       //iframe(allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
       //.popup__image(style='background-image: url(' + require('src/modules/popup/img/img.jpg') + ')')

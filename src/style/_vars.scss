@@ -3,15 +3,27 @@
 // ====================================
 
 $black: #000000;
+$black2: #272727;
 $white: #ffffff;
-$gray: #A1A4AC;
+$red: #D0011B;
+$dark-red: #AC0016;
+$blue: #283044;
+
+$black50: #E7E8E7;
+
+$gray200: #F5F5F5;
+$gray300: #E3E3E3;
+$gray400: #CFCFCF;
+$gray500: #B5B5B5;
+$gray600: #757575;
+$gray900: #272727;
+
 $gray2: #9CACC6;
 $gray3: #808080;
-$gray4: #CACBCB;
-$blue: #283044;
-$red: #D0011B;
+$gray4: #666666;
+$gray5: #CFCFCF;
 
-// ====================================
+  // ====================================
 // grid settings
 // ====================================
 $gutter: 15px;
@@ -21,7 +33,7 @@ $gutter-half: ($gutter / 2);
 //$breakpoint-lg: 798px;
 $breakpoint-md: 1070px;
 
-//$container-sm: 468px
+$container-sm: 500px;
 //$container-md: 768px;
 $container-lg: 1440px;
 

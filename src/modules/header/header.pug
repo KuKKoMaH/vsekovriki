@@ -1,9 +1,7 @@
 header.header
   .header__top
     .c
-      button.header__city
-        span.header__cityIcon: +the_svg('geo')
-        span.header__cityName Санкт-Петербург
+      include ../citySelect/citySelect
       .header__topAside
         a(href='#' target="_blank").header__topContact: +the_svg('whatsapp')
         a(href='#' target="_blank").header__topContact: +the_svg('telegram')
@@ -29,10 +27,19 @@ header.header
             li: a(href='#') Контакты
         .header__info
           .header__constructor
-            a.btn(href='#') Онлайн-конструктор
+            a.btn.btn--sm(href='#') Онлайн-конструктор
           form.header__search
             input.header__searchInput(placeholder="Поиск по авто")
             button.header__searchIcon: +the_svg('search')
+            .header__searchPopup
+              .header__searchResults
+                a.header__searchResult(href='#') ГАЗ 3302/2705/3221 Gazel Buisnes 3302/2705/3221 1994-2010 2х местная кабина.
+                a.header__searchResult(href='#') ГАЗ ГАЗель Next 1 2013-2024 Грузопассажирская
+                a.header__searchResult(href='#') Audi A3 III (8V) Хэтчбек (2012 - 2016)
+                a.header__searchResult(href='#') Audi A4 IV  (B8, 8K) Седан (2007 - 2015)
+                a.header__searchResult(href='#') Audi A3 III (8V) Хэтчбек (2012 - 2016)
+                a.header__searchResult(href='#') Audi A4 IV  (B8, 8K) Седан (2007 - 2015)
+                a.header__searchResult(href='#') EXEED TXL 1 2019-н.в. Внедорожник 5 дв.
 
           a.header__searchButton
             +the_svg('search')
